@@ -24,7 +24,7 @@ public class Projectiles : MonoBehaviour {
 		GUI.Label(new Rect (10, 10, 100, 100), ""+numProjectiles+"");
 	}	
 
-	void addProjectiles()
+	public void addProjectiles()
 	{
 		numProjectiles++;
 	}
@@ -36,5 +36,5 @@ public class Projectiles : MonoBehaviour {
 		Instantiate(projectilePrefab, player.transform.position, player.transform.rotation);
 		    numProjectiles--;
 		}
-		}
+	}
 }

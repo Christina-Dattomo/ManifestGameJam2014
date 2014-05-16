@@ -48,7 +48,9 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraLock.cs" />
      <Compile Include="Assets\Scripts\CollectingObjects\collectibleTrigger.cs" />
+     <Compile Include="Assets\Scripts\CollectingObjects\projPickup.cs" />
      <Compile Include="Assets\Scripts\CollectingObjects\projectileTrigger.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyDestroy.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\ProjectileMovement.cs" />
      <Compile Include="Assets\Scripts\UI\Projectiles.cs" />

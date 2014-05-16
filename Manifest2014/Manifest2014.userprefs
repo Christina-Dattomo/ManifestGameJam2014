@@ -1,9 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ProjectileMovement.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemy\EnemyDestroy.cs">
     <Files>
+      <File FileName="Assets\Scripts\CollectingObjects\projPickup.cs" Line="26" Column="3" />
       <File FileName="Assets\Scripts\ProjectileMovement.cs" Line="4" Column="50" />
-      <File FileName="Assets\Scripts\UI\Projectiles.cs" Line="41" Column="1" />
+      <File FileName="Assets\Scripts\UI\Projectiles.cs" Line="27" Column="9" />
+      <File FileName="Assets\Scripts\CollectingObjects\collectibleTrigger.cs" Line="19" Column="4" />
+      <File FileName="Assets\Scripts\Enemy\EnemyDestroy.cs" Line="9" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
