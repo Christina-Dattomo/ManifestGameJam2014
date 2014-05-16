@@ -6,7 +6,6 @@ public class Projectiles : MonoBehaviour {
 	public GameObject player;
 	public GameObject projectilePrefab;
 	public int numProjectiles = 10;
-	public float projectileSpeed = 13.0f;
 
 
 	// Use this for initialization
@@ -33,7 +32,6 @@ public class Projectiles : MonoBehaviour {
 	void shoot()
 	{
 			Instantiate(projectilePrefab, player.transform.position, player.transform.rotation);
-		    projectilePrefab.rigidbody2D.AddForce(new Vector2 (projectileSpeed, 0));
 		    numProjectiles--;
     }
 }
