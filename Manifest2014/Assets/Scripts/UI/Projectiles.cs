@@ -4,6 +4,8 @@ using System.Collections;
 public class Projectiles : MonoBehaviour {
 	public GUISkin customGUI;
 	public GameObject player;
+	public GameObject projPickupObj;
+	public projPickup addMult;
 	public GameObject projectilePrefab;
 	public int numProjectiles = 10;
 
@@ -15,6 +17,8 @@ public class Projectiles : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		player = GameObject.Find ("flyingCharacter");
+		projPickupObj = GameObject.Find ("projectilePickup");
+		addMult = projPickupObj.GetComponent<projPickup>();
 		if (Input.GetKeyDown (KeyCode.Space)) 
 		  shoot();
 	}
@@ -26,14 +30,22 @@ public class Projectiles : MonoBehaviour {
 
 	public void addProjectiles()
 	{
-		numProjectiles++;
+		if (addMult.addMultipleProj) 
+		{
+		    numProjectiles = numProjectiles + 6;
+		}
+		else
+		{
+			numProjectiles++;
+		}
+
 	}
 
 	void shoot()
 	{
 		if(numProjectiles>=1)
 		{
-		Instantiate(projectilePrefab, player.transform.position, player.transform.rotation);
+		    Instantiate(projectilePrefab, player.transform.position, player.transform.rotation);
 		    numProjectiles--;
 		}
 	}
