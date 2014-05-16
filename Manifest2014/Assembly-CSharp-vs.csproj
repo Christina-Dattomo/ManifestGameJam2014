@@ -51,7 +51,8 @@
      <Compile Include="Assets\Scripts\UI\Projectiles.cs" />
      <Compile Include="Assets\Scripts\UI\Score.cs" />
      <Compile Include="Assets\Scripts\UI\UserInterface.cs" />
-     <Compile Include="Assets\Scripts\collectingObjects.cs" />
+     <Compile Include="Assets\Scripts\collectibleTrigger.cs" />
+     <Compile Include="Assets\Scripts\projectileTrigger.cs" />
      <None Include="Assets\Art\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

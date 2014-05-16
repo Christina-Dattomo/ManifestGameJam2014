@@ -2,19 +2,28 @@
 using System.Collections;
 
 public class Projectiles : MonoBehaviour {
+	public GUISkin customGUI;
+	public GameObject player;
+	public GameObject projectilePrefab;
 	public int numProjectiles = 10;
+	public float projectileSpeed = 13.0f;
 
 
 	// Use this for initialization
-	void Start () {
-
-	
+	void Start () { 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		player = GameObject.Find ("flyingCharacter");
+		if (Input.GetKeyDown (KeyCode.Space)) 
+		  shoot();
 	}
+	void OnGUI()
+	{
+		GUI.skin = customGUI;
+		GUI.Label(new Rect (10, 10, 100, 100), ""+numProjectiles+"");
+	}	
 
 	void addProjectiles()
 	{
@@ -23,7 +32,8 @@ public class Projectiles : MonoBehaviour {
 
 	void shoot()
 	{
-		//keydown instantiate projectile and shoot it
-		numProjectiles--;
-	}
+			Instantiate(projectilePrefab, player.transform.position, player.transform.rotation);
+		    projectilePrefab.rigidbody2D.AddForce(new Vector2 (projectileSpeed, 0));
+		    numProjectiles--;
+    }
 }

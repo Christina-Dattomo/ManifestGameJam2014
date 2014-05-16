@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class Score : MonoBehaviour {
+	public GUISkin customGUI;
 	public int score = 0;
 
 	// Use this for initialization
@@ -20,7 +21,8 @@ public class Score : MonoBehaviour {
 
 	void OnGUI()
 	{
-		GUI.Label(new Rect (Screen.width / 2, 105, 30, 100), ""+score+"");
+		GUI.skin = customGUI;
+		GUI.Label(new Rect (Screen.width / 2, 10, 100, 100), ""+score+"");
 	}	
 
 }

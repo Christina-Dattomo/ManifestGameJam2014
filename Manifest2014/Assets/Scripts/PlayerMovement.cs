@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour {
 	public Rigidbody2D rigid2D;
 	public float MaxVelocityX = 6.0f;
 	public float AccelerationX = 12.0f;
-	public float UpForce = 100.0f;
+	public float UpForce = 1.5f;
 	public float GavityScale = 0.1f;
 
 	void Start () {
@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour {
 			//rigid2D.velocity = new Vector2(3, rigid2D.velocity.y);
 		if(Input.GetKeyDown(KeyCode.UpArrow))
 		{
-			rigid2D.AddForce(new Vector2(0, UpForce));
+			rigid2D.velocity = new Vector2(rigid2D.velocity.x, UpForce);
 		}
 	}
 }
