@@ -5,13 +5,10 @@ public class EnemyDestroy : MonoBehaviour {
 
 	public GameObject gameManager;
 	public Score scoring;
-	public AudioSource playerAudio;
-	public AudioClip balloonPop;
 
 
 	void Start () {
 		gameManager = GameObject.Find ("GameManager");
-		playerAudio = GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>();
 		scoring = gameManager.GetComponent<Score>();
 	}
 	
@@ -24,9 +21,8 @@ public class EnemyDestroy : MonoBehaviour {
 		if (c.gameObject.tag == "projectile") 
 		{
 			scoring.addScore();
-			playerAudio.PlayOneShot(balloonPop);
-			if(!playerAudio.isPlaying)
-				Destroy (this.gameObject);
+			Destroy (this.gameObject);
 		}
+		
 	}
 }

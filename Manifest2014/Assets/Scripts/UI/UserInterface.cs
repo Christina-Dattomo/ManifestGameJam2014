@@ -30,8 +30,7 @@ public class UserInterface : MonoBehaviour {
 	
 	void startScreen()
 	{
-		GUI.Label(new Rect (Screen.width / 2 - 180, Screen.height /2 - 145, 500, 100), "Manifest Game 2014!");
-		if (GUI.Button (new Rect (Screen.width / 2 - 100, Screen.height /2 - 20, 200, 100), "Start!"))
+		if (GUI.Button (new Rect (Screen.width / 2 - 100, Screen.height /2 + 100, 200, 100), "Start!"))
 			Application.LoadLevel("LevelOne");
 	}
 	
