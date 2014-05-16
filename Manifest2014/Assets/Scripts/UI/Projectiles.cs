@@ -6,6 +6,7 @@ public class Projectiles : MonoBehaviour {
 	public GameObject player;
 	public GameObject projectilePrefab;
 	public int numProjectiles = 10;
+	public AudioClip projectileShot;
 
 
 	// Use this for initialization
@@ -38,6 +39,7 @@ public class Projectiles : MonoBehaviour {
 	{
 		if(numProjectiles>=1)
 		{
+			audio.PlayOneShot(projectileShot);
 		    Instantiate(projectilePrefab, player.transform.position, player.transform.rotation);
 		    numProjectiles--;
 		}

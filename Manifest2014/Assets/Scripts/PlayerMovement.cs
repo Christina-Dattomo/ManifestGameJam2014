@@ -14,12 +14,17 @@ public class PlayerMovement : MonoBehaviour {
 	private float m_normalGravity = 1;
 	private float m_glideCooldown;
 	private float m_glideDuration;
+	public GameObject ParachutePrefab;
 
 	public bool GlideEnabled = true;
 	public bool FlightEnabled = true;
 	public bool InputEnabled = true;
 
+	public AudioSource playerAudio;
+	public AudioClip playerExplosion;
+	
 	void Start () {
+		playerAudio = GameObject.Find("SFXPlayer").GetComponent<AudioSource>();
 		m_normalGravity = rigid2D.gravityScale;
 		camera = GameObject.Find("Main Camera").GetComponent<CameraLock>();
 	}
@@ -66,8 +71,11 @@ public class PlayerMovement : MonoBehaviour {
 		}
 		if(zone.CompareTag("CameraExpand"))
 		{
-			//Tell camera to expand
+			camera.StartExpand();
 		}
+		if(zone.CompareTag("LevelEnd"))
+			CreateParachute();
+
 	}
 	void OnTriggerExit2D(Collider2D zone)
 	{
@@ -75,5 +83,16 @@ public class PlayerMovement : MonoBehaviour {
 			GlideEnabled = true;
 		if(zone.CompareTag("AntiInput"))
 			InputEnabled = true;
+	}
+	void CreateParachute()
+	{
+		playerAudio.PlayOneShot(playerExplosion);
+		if(!playerAudio.isPlaying)
+		{
+			GameObject parachute = (GameObject)Instantiate (ParachutePrefab, transform.position, Quaternion.identity);
+			Destroy (this.gameObject);
+		}
+			//parachute.GetComponent<ParachuteMovement>().rigid2D.velocity = rigid2D.velocity; 
+
 	}
 }
