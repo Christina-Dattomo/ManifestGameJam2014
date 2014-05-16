@@ -31,7 +31,10 @@ public class Projectiles : MonoBehaviour {
 
 	void shoot()
 	{
-			Instantiate(projectilePrefab, player.transform.position, player.transform.rotation);
+		if(numProjectiles>=1)
+		{
+		Instantiate(projectilePrefab, player.transform.position, player.transform.rotation);
 		    numProjectiles--;
-    }
+		}
+		}
 }
