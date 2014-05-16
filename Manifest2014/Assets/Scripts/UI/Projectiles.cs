@@ -30,8 +30,9 @@ public class Projectiles : MonoBehaviour {
 
 	public void addProjectiles()
 	{
-		if (addMult.addMultipleProj) 
+		if (addMult.addMultipleProj = true) 
 		{
+			Debug.Log("addMultiple");
 		    numProjectiles = numProjectiles + 6;
 		}
 		else
