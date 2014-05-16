@@ -4,7 +4,6 @@ using System.Collections;
 public class projPickup : MonoBehaviour {
 	public GameObject gameManager;
 	public Projectiles addProj;
-	public bool addMultipleProj = false;
 	// Use this for initialization
 	void Start () {
 		gameManager = GameObject.Find ("GameManager");
@@ -20,9 +19,9 @@ public class projPickup : MonoBehaviour {
 		
 		if (c.gameObject.tag == "Player") 
 	        {
-			    addMultipleProj = true;
-			    addProj.addProjectiles();
 		     	Destroy (this.gameObject);
-			}		  
+			    addProj.addMultipleProjectiles();
+			}
+
 	}
 }
