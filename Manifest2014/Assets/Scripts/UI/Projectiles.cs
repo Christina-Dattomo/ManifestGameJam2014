@@ -44,7 +44,7 @@ public class Projectiles : MonoBehaviour {
 	{
 		if (numProjectiles >= 1 && canShoot) 
 		{
-			Instantiate (projectilePrefab, player.transform.position, player.transform.rotation);
+			Instantiate (projectilePrefab, new Vector3(player.transform.position.x, player.transform.position.y -2, player.transform.position.z), player.transform.rotation);
 			numProjectiles--;
 			canShoot = false;
 			yield return new WaitForSeconds (shotCooldown);

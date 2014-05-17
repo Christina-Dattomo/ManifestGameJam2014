@@ -13,7 +13,7 @@ public class EnemyShoot : MonoBehaviour {
 	{
 		if (enemyCanShoot) 
 		{
-			Instantiate (enemyBullet, this.transform.position, this.transform.rotation);
+			Instantiate (enemyBullet, new Vector3(transform.position.x, transform.position.y -2, transform.position.z), this.transform.rotation);
 			enemyCanShoot = false;
 			yield return new WaitForSeconds (3);
 			enemyCanShoot = true;
